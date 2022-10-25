@@ -1,0 +1,24 @@
+{
+  "name": "noteify",
+  "version": "1.0.0",
+  "description": "this is a notes app using a variation of the old tech stacks i used to work with",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Clide1/notesappwiththeoldtech.git"
+  },
+  "author": "Brandon Diaz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/1Clide1/notesappwiththeoldtech/issues"
+  },
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

@@ -1,0 +1,22 @@
+/* basic set up */
+
+html {
+  height: 100%;
+}
+
+/* basic adjustments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Rubik", sans-serif;
+}
+
+/* root css vars */
+:root {
+}
+
+body {
+  background-color: rgb(34, 2, 65);
+}

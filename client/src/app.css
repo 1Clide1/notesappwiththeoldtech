@@ -1,0 +1,9 @@
+.title-header {
+  text-align: center;
+  /* test colors */
+  background-color: rgb(115, 1, 221);
+  color: rgb(0, 1, 32);
+  border-radius: 2rem;
+  font-weight: 800;
+  font-size: 5rem;
+}

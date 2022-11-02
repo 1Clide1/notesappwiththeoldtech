@@ -1,0 +1,30 @@
+/* sass vars */
+
+// main colors
+$firstColor: #1c0c5b;
+$secondColor: #3d2c8d;
+$thirdColor: #916bbf;
+$fourthColor: #c996cc;
+// $fifthColor: #293d2d;
+
+// accent colors for
+$textColor: rgb(234, 221, 252);
+$lightGlow: rgba(145, 107, 191, 0.5);
+
+/* basic set up */
+html {
+  height: 100%;
+  background-color: $firstColor;
+}
+
+/* basic adjustments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+}

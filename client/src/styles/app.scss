@@ -1,0 +1,14 @@
+// import index sass for vars
+@import "./index.scss";
+
+.title-header {
+  text-align: center;
+  /* test colors */
+  background-color: $secondColor;
+  color: $textColor;
+  border: 1px solid $thirdColor;
+  border-radius: 1.5rem;
+  box-shadow: 5px 3px 30px $lightGlow;
+  font-weight: 800;
+  font-size: 5rem;
+}

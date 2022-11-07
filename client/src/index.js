@@ -1,11 +1,12 @@
 // imports
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles/index.scss";
 
 // creating the root
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
 
 // rendering out the root
 root.render(

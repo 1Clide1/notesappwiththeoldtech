@@ -2,7 +2,7 @@
 
 const plugins = [];
 
-// if it is not production add react refresh because it cannot go in production
+// previous code had some issues but the idea is that if i am not in production mode and in serve mode then add the react refresh plugin
 if (process.env.SERVE) {
   plugins.push("react-refresh/babel");
 }

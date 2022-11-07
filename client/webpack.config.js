@@ -1,7 +1,7 @@
 // imports
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+// const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -15,7 +15,7 @@ const plugins = [
   new MiniCssExtractPlugin(),
   new HtmlWebpackPlugin({
     // my index html file is in the public folder
-    template: "./public/index.html",
+    template: path.join(__dirname, "public", "index.html"),
   }),
 ];
 
@@ -38,13 +38,14 @@ module.exports = {
 
   // entry point of my app
   entry: "./src/index.js",
+
   //   setting the ouput of the webpack
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "bundle.js",
     // this places all images processed in an image folder
     assetModuleFilename: "images/[hash][ext][query]",
   },
+
   //   all of the modules have rules and this is how to add said rules
   module: {
     rules: [
@@ -62,28 +63,12 @@ module.exports = {
           "sass-loader",
         ],
       },
+
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        /**
-         * The `type` setting replaces the need for "url-loader"
-         * and "file-loader" in Webpack 5.
-         *
-         * setting `type` to "asset" will automatically pick between
-         * outputing images to a file, or inlining them in the bundle as base64
-         * with a default max inline size of 8kb
-         */
         type: "asset",
-
-        /**
-         * If you want to inline larger images, you can set
-         * a custom `maxSize` for inline like so:
-         */
-        // parser: {
-        //   dataUrlCondition: {
-        //     maxSize: 30 * 1024,
-        //   },
-        // },
       },
+
       //   module rules for bable
       {
         test: /\.(js|jsx)$/,
@@ -99,17 +84,22 @@ module.exports = {
       },
     ],
   },
+
   plugins: plugins,
+
   target: target,
+
   //   possible js extensions
   resolve: {
     extensions: [".js", ".jsx"],
   },
+
   devtool: "source-map",
+
   devServer: {
-    // contentbase is dead now use static instead
+    // contentbase is doesn't work now use static instead
     static: "./build",
     hot: true,
-    port: 3001, // default 8000
+    port: 3000, // default 8000
   },
 };

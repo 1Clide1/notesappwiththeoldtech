@@ -1,7 +1,7 @@
 // imports
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -101,5 +101,9 @@ module.exports = {
     static: "./build",
     hot: true,
     port: 3000, // default 8000
+    // this should render a browser level overlay if there is a compiler error
+    client: {
+      overlay: true,
+    },
   },
 };

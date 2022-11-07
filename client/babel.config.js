@@ -3,7 +3,7 @@
 const plugins = [];
 
 // if it is not production add react refresh because it cannot go in production
-if (process.env.NODE_ENV !== "production") {
+if (process.env.SERVE) {
   plugins.push("react-refresh/babel");
 }
 

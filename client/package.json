@@ -4,9 +4,8 @@
   "description": "notes taking app with old tech stack",
   "private": true,
   "scripts": {
-    "start": "webpack serve",
-    "watch": "webpack --watch",
-    "build": "NODE_ENV=production webpack",
+    "start": "webpack serve --mode development --open --hot",
+    "build": "webpack --mode production",
     "build-dev": "webpack"
   },
   "keywords": [],

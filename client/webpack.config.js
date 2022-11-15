@@ -5,6 +5,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const EslintPlugin = require("eslint-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 let mode = "development";
 // usually target is defaulted to web but can also be node etc setting to web just incase
@@ -19,6 +20,9 @@ const plugins = [
     template: path.join(__dirname, "public", "index.html"),
   }),
   new EslintPlugin(),
+  new CompressionPlugin({
+    algorithm: "gzip",
+  }),
 ];
 
 //  if webpack is in production build

@@ -73,7 +73,8 @@ module.exports = {
 
       //   module rules for bable
       {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        // updated regex because hte previous regex seemed  to not work
+        test: /\.(js|jsx|ts|tsx)$/,
         // this is supposed to be regex
         exclude: /node_modules/,
         use: {

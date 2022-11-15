@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const EslintPlugin = require("eslint-webpack-plugin");
 
 let mode = "development";
 // usually target is defaulted to web but can also be node etc setting to web just incase
@@ -17,6 +18,7 @@ const plugins = [
     // my index html file is in the public folder
     template: path.join(__dirname, "public", "index.html"),
   }),
+  new EslintPlugin(),
 ];
 
 //  if webpack is in production build
@@ -37,7 +39,7 @@ module.exports = {
   mode: mode,
 
   // entry point of my app
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
 
   //   setting the ouput of the webpack
   output: {
@@ -71,7 +73,7 @@ module.exports = {
 
       //   module rules for bable
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
         // this is supposed to be regex
         exclude: /node_modules/,
         use: {

@@ -1,14 +1,41 @@
-// import index sass for vars
-@import "./index.scss";
+// import var
+@use './partials/variables';
+
+.app-header {
+  position: relative;
+  padding: 1em; //without the 1 em padding the spacing would be incorrect
+}
+
+.hero-gradient-bg-container {
+  position: absolute;
+  inset: 0;
+  height: 50vh;
+  clip-path: polygon(0 0, 100% 0, 100% 6%, 0 31%);
+}
+
+.hero-gradient-bg {
+  height: 100%;
+  width: 100%;
+  background-image: var(--bg-gradient);
+  background-size: 400%;
+  background-position: inherit;
+  transition: background-position 3s;
+  animation: bg-loop-animation 5s ease alternate infinite both;
+}
 
 .title-header {
-  text-align: center;
-  /* test colors */
-  background-color: $secondColor;
-  color: $textColor;
-  border: 1px solid $thirdColor;
-  border-radius: 1.5rem;
-  box-shadow: 5px 3px 30px $lightGlow;
-  font-weight: 800;
-  font-size: 5rem;
+  color: var(text-color);
+  mix-blend-mode: overlay;
+  isolation: auto; //should help witht the blend mode to have a consistent look
+  text-align: start;
+}
+// simple animation for the gradient loop
+@keyframes bg-loop-animation {
+  0% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
+  }
 }

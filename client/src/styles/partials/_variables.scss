@@ -1,0 +1,23 @@
+:root {
+  // **** colors section ***
+  //   main site colors
+  --first-color: #937dc2;
+  --second-color: #c689c6;
+  --third-color: #b37bb3;
+  --fourth-color: #ffabe1;
+  --fith-color: #ffe6f7;
+  // text colors
+  --text-color: #241924;
+  --alt-text-color: #fdf5fb;
+  // colors for the glass effect
+  --highlight: rgba(255, 244, 252, 0.747);
+  --glass-background: rgba(255, 249, 254, 0.5);
+
+  //   background
+  --bg-gradient: linear-gradient(
+    65deg,
+    rgba(147, 125, 194, 1) 0%,
+    rgba(198, 137, 198, 1) 50%,
+    rgba(255, 171, 225, 1) 100%
+  );
+}

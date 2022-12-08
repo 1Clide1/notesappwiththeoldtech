@@ -1,6 +1,6 @@
 // import var
 @use './partials/variables';
-
+// header content
 .app-header {
   position: relative;
   padding: 1em; //without the 1 em padding the spacing would be incorrect
@@ -23,7 +23,7 @@
   transition: background-position 3s;
   animation: bg-loop-animation 5s ease alternate infinite both;
 }
-
+// text/brand name
 .title-header {
   position: absolute;
   top: 0px;

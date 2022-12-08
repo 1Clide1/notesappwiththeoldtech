@@ -10,6 +10,7 @@
   position: absolute;
   inset: 0;
   height: 50vh;
+  z-index: 0;
   clip-path: polygon(0 0, 100% 0, 100% 6%, 0 31%);
 }
 
@@ -24,10 +25,13 @@
 }
 
 .title-header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   color: var(text-color);
   mix-blend-mode: overlay;
-  isolation: auto; //should help witht the blend mode to have a consistent look
-  text-align: start;
+  isolation: isolate; //should help witht the blend mode to have a consistent look
+  z-index: 3;
 }
 // simple animation for the gradient loop
 @keyframes bg-loop-animation {
